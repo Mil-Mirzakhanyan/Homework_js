@@ -57,18 +57,18 @@ class Order {
     }
 
     addDish(dishName, menus) {
-        let foundDish = null;
+        let item = null;
         for (const menu of menus) {
             if (menu.getDish(dishName)) {
-                foundDish = menu.getDish(dishName);
+                item = menu.getDish(dishName);
                 break;
             }
         }
 
-        if (!foundDish) throw new DishMissingError(`${dishName} Dish not found`);
+        if (!item throw new DishMissingError(`${dishName} Dish not found`);
         
-        this.dishes.push(foundDish);
-        this.#totalPrice += foundDish.price;
+        this.dishes.push(item);
+        this.#totalPrice += item.price;
     }
 
     getTotal() { return this.#totalPrice; }
@@ -82,4 +82,3 @@ function withDiscount(order) {
         order.applyDiscount(total * 0.1);
     }
 }
-
