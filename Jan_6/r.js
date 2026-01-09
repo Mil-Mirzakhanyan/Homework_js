@@ -65,7 +65,7 @@ class Order {
             }
         }
 
-        if (!item throw new DishMissingError(`${dishName} Dish not found`);
+        if (!item )throw new DishMissingError(`${dishName} Dish not found`);
         
         this.dishes.push(item);
         this.#totalPrice += item.price;
